@@ -148,7 +148,7 @@ let stackoverflow = [false, true];
 let tiktok = [true, false];
 let tumblr = [false, false];
 let twitch = [false, true];
-let twitter = [false, true];
+let twitter = [true, true];
 let wikipedia = [false, false];
 let youtube = [false, false];
 
