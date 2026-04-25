@@ -125,32 +125,32 @@ PARTICULAR PLATFORM */
 
 //           REDIRECTON / FARSIDE
 
-let bandcamp = [true, true];
+let bandcamp = [false, true];
 let deepl = [false, true]; // Mozhi Deepl engine doesn't work
-let deviantart = [true, false];
-let fandom = [true, true];
-let genius = [true, true];
-let goodreads = [true, false];
-let google = [true, true];
-let gtranslate = [true, true];
-let hackernews = [true, true];
-let imdb = [true, true];
+let deviantart = [false, false];
+let fandom = [false, true];
+let genius = [false, true];
+let goodreads = [false, false];
+let google = [false, true];
+let gtranslate = [false, true];
+let hackernews = [false, true];
+let imdb = [false, true];
 let imgur = [true, false];
-let instagram = [true, true];
-let medium = [true, true];
+let instagram = [false, true];
+let medium = [false, true];
 let pinterest = [true, true];
-let pixiv = [true, true];
-let quora = [true, false];
-let reddit = [true, false];
-let reuters = [true, true];
-let soundcloud = [true, true];
-let stackoverflow = [true, true];
+let pixiv = [false, true];
+let quora = [false, false];
+let reddit = [false, false];
+let reuters = [false, true];
+let soundcloud = [false, true];
+let stackoverflow = [false, true];
 let tiktok = [true, false];
-let tumblr = [true, false];
-let twitch = [true, true];
-let twitter = [true, true];
-let wikipedia = [true, false];
-let youtube = [true, false];
+let tumblr = [false, false];
+let twitch = [false, true];
+let twitter = [false, true];
+let wikipedia = [false, false];
+let youtube = [false, false];
 
 // PREFERRED FRONTEND
 let youtubeFrontend = "freetube"; // accepts "invidious", "piped", "tubo", "freetube"
