@@ -60,7 +60,7 @@
 // @namespace https://github.com/bradenglund/privacy-redirector
 // @author Ahmet Arda Kavakcı
 // @license GPLv3
-// @version 1.6.3
+// @version 1.6.3.1
 // @downloadURL
 // https://raw.githubusercontent.com/bradenglund/privacy-redirector/main/privacy-redirector.user.js
 // @supportURL https://github.com/bradenglund/privacy-redirector
