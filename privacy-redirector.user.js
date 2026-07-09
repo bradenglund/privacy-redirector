@@ -120,50 +120,47 @@
  \___/|_| \_|      \___/|_|   |_|
 
 CHANGE THE RELEVANT VALUE TO "false" TO
-DISABLE THE REDIRECTION/FARSIDE FOR THAT
+DISABLE THE REDIRECTION FOR THAT
 PARTICULAR PLATFORM */
 
-//           REDIRECTON / FARSIDE
+//           REDIRECTON
 
-let bandcamp = [false, true];
-let deepl = [false, true]; // Mozhi Deepl engine doesn't work
-let deviantart = [false, false];
-let fandom = [false, true];
-let genius = [false, true];
-let goodreads = [false, false];
-let google = [false, true];
-let gtranslate = [false, true];
-let hackernews = [false, true];
-let imdb = [false, true];
-let imgur = [true, false];
-let instagram = [false, true];
-let medium = [false, true];
-let pinterest = [true, true];
-let pixiv = [false, true];
-let quora = [false, false];
-let reddit = [false, false];
-let reuters = [false, true];
-let soundcloud = [false, true];
-let stackoverflow = [false, true];
-let tiktok = [true, false];
-let tumblr = [false, false];
-let twitch = [false, true];
-let twitter = [true, true];
-let wikipedia = [false, false];
-let youtube = [false, false];
+let bandcamp = false;
+let deepl = false; // Mozhi Deepl engine doesn't work
+let deviantart = false;
+let fandom = false;
+let genius = false;
+let goodreads = false;
+let google = false;
+let gtranslate = false;
+let hackernews = false;
+let imdb = false;
+let imgur = true;
+let instagram = false;
+let medium = false;
+let pinterest = true;
+let pixiv = false;
+let quora = false;
+let reddit = false;
+let reuters = false;
+let soundcloud = false;
+let stackoverflow = false;
+let tiktok = true;
+let tumblr = false;
+let twitch = false;
+let twitter = true;
+let wikipedia = false;
+let youtube = false;
 
 // PREFERRED FRONTEND
 let youtubeFrontend = "freetube"; // accepts "invidious", "piped", "tubo", "freetube"
 let youtubeMusicFrontend = "hyperpipe"; // accepts "hyperpipe", "invidious", "piped"
 let redditFrontend = "libreddit"; // accepts "libreddit", "teddit"
 let googleFrontend = "librey"; // accepts "librey", "searx", "searxng"
-let googleTranslateFrontend = "mozhi"; // accepts "lingva" (farside available), "mozhi" (no farside)
+let googleTranslateFrontend = "mozhi"; // accepts "lingva", "mozhi"
 let geniusFrontend = "intellectual"; // accepts dumb, intellectual
 let mediumFrontend = "scribe"; // accepts libmedium, scribe, mediumrip
 let hackernewsFrontend = "better"; // accepts better, worker
-
-// OTHER SETTINGS
-let keepHistory = false; // keeps farside.link in the browser history
 
 // // // // // // // // // // // // //
 
@@ -174,7 +171,7 @@ let keepHistory = false; // keeps farside.link in the browser history
  | || | | \__ \ || (_| | | | | (_|  __/\__ \
 |___|_| |_|___/\__\__,_|_| |_|\___\___||___/
 
-LIST OF INSTANCES TO USE IF FARSIDE IS NOT ENABLED
+LIST OF INSTANCES
 */
 
 const Instances = {
@@ -653,8 +650,6 @@ const Instances = {
   ],
 };
 
-let farsideInstance = keepHistory ? "farside.link/_" : "farside.link";
-
 // // // // // // // // // // // // //
 
 const hash = window.location.hash,
@@ -687,7 +682,7 @@ const getrandom = async (instances) =>
   instances[Math.floor(Math.random() * instances.length)];
 
 async function redirectInstagram() {
-  if (instagram[0]) {
+  if (instagram) {
     window.stop();
     let pathname = window.location.pathname;
     let search = window.location.search;
@@ -716,15 +711,13 @@ async function redirectInstagram() {
 }
 
 async function redirectTwitter() {
-  if (twitter[0]) {
+  if (twitter) {
     window.stop();
 
     const pathname = window.location.pathname;
     let searchpath = `${pathname}${window.location.search}`;
 
-    selectedInstance = twitter[1]
-      ? `${farsideInstance}/nitter`
-      : await getrandom(Instances.nitter);
+    selectedInstance = await getrandom(Instances.nitter);
 
     if (pathname === "/i/flow/login")
       searchpath = searchpath.replace(
@@ -740,14 +733,12 @@ async function redirectTwitter() {
 }
 
 async function redirectReddit() {
-  if (reddit[0] && !window.location.pathname.startsWith("/domain")) {
+  if (reddit && !window.location.pathname.startsWith("/domain")) {
     window.stop();
     let pathname = window.location.pathname;
     let search = window.location.search;
 
-    selectedInstance = reddit[1]
-      ? `${farsideInstance}/${redditFrontend}`
-      : await getrandom(Instances[redditFrontend]);
+    selectedInstance = await getrandom(Instances[redditFrontend]);
 
     if (pathname === "/media" && search) {
       const params = new URLSearchParams(search);
@@ -764,13 +755,11 @@ async function redirectReddit() {
 }
 
 async function redirectYoutube(frontend) {
-  if (youtube[0]) {
+  if (youtube) {
     window.stop();
     let searchpath = `${window.location.pathname}${window.location.search}`;
     if (window.location.pathname.startsWith("/embed")) {
-      selectedInstance = youtube[1]
-        ? `${farsideInstance}/invidious`
-        : await getrandom(Instances["invidious"]);
+      selectedInstance = await getrandom(Instances["invidious"]);
       newURL = `${scheme}${selectedInstance}${window.location.pathname}${
         window.location.search
       }${hash}`;
@@ -790,10 +779,7 @@ async function redirectYoutube(frontend) {
         window.location.replace(`freetube://${youtube_link}`);
         return;
       } else {
-        selectedInstance =
-          youtube[1] && frontend !== "hyperpipe"
-            ? `${farsideInstance}/${frontend}`
-            : await getrandom(Instances[frontend]);
+        selectedInstance = await getrandom(Instances[frontend]);
       }
 
       newURL = `${scheme}${selectedInstance}${searchpath}${hash}`;
@@ -803,12 +789,10 @@ async function redirectYoutube(frontend) {
 }
 
 async function redirectTiktok() {
-  if (tiktok[0]) {
+  if (tiktok) {
     window.stop();
     let pathname = window.location.pathname;
-    selectedInstance = tiktok[1]
-      ? `${farsideInstance}/proxitok`
-      : await getrandom(Instances.proxitok);
+    selectedInstance = await getrandom(Instances.proxitok);
 
     await Promise.any(
       [
@@ -828,12 +812,10 @@ async function redirectTiktok() {
 }
 
 async function redirectImgur() {
-  if (imgur[0]) {
+  if (imgur) {
     window.stop();
 
-    selectedInstance = imgur[1]
-      ? `${farsideInstance}/rimgo`
-      : await getrandom(Instances.rimgo);
+    selectedInstance = await getrandom(Instances.rimgo);
 
     newURL = `${scheme}${selectedInstance}${window.location.pathname}${
       window.location.search
@@ -844,7 +826,7 @@ async function redirectImgur() {
 }
 
 async function redirectMedium(frontend) {
-  if (medium[0]) {
+  if (medium) {
     let pathname = window.location.pathname;
     const host_path = `${window.location.hostname}${pathname}`;
 
@@ -858,10 +840,7 @@ async function redirectMedium(frontend) {
       )
     ) {
       window.stop();
-      selectedInstance =
-        medium[1] && frontend === "scribe"
-          ? `${farsideInstance}/scribe`
-          : await getrandom(Instances[frontend]);
+      selectedInstance = await getrandom(Instances[frontend]);
       const username = window.location.hostname.replace(/\.?medium\.com/, "");
       if (username) pathname = `/${username}${pathname}`;
       newURL = `${scheme}${selectedInstance}${pathname}${
@@ -873,7 +852,7 @@ async function redirectMedium(frontend) {
 }
 
 async function redirectHackerNews() {
-  if (hackernews[0]) {
+  if (hackernews) {
     let pathname = window.location.pathname;
     if (
       ["/newest", "/item", "/user", "/ask", "/show", "/jobs", "/"].includes(
@@ -902,15 +881,13 @@ async function redirectHackerNews() {
 }
 
 async function redirectGTranslate() {
-  if (gtranslate[0]) {
+  if (gtranslate) {
     window.stop();
     let pathname = window.location.pathname;
 
     switch (googleTranslateFrontend) {
       case "lingva":
-        selectedInstance = gtranslate[1]
-          ? `${farsideInstance}/lingva`
-          : await getrandom(Instances.lingva);
+        selectedInstance = await getrandom(Instances.lingva);
 
         if (window.location.search) {
           const params = new URLSearchParams(window.location.search);
@@ -963,7 +940,7 @@ async function redirectDeviantart() {
     profile: /^\/(\w+)$/,
   };
 
-  if (deviantart[0]) {
+  if (deviantart) {
     if (patterns.post.test(pathname)) {
       pathnameMatch = `/post/${parts[0].toLowerCase()}/${parts[2]}`;
     } else if (patterns.tag.test(pathname)) {
@@ -987,7 +964,7 @@ async function redirectDeviantart() {
 }
 
 async function redirectDeepl() {
-  if (deepl[0]) {
+  if (deepl) {
     window.stop();
     selectedInstance = await getrandom(Instances.mozhi);
     if (window.location.hash) {
@@ -1003,7 +980,7 @@ async function redirectDeepl() {
 }
 
 async function redirectTumblr() {
-  if (tumblr[0]) {
+  if (tumblr) {
     window.stop();
     selectedInstance = await getrandom(Instances.priviblur);
     newURL = `${scheme}${selectedInstance}${window.location.pathname}${
@@ -1014,7 +991,7 @@ async function redirectTumblr() {
 }
 
 async function redirectReuters() {
-  if (reuters[0]) {
+  if (reuters) {
     window.stop();
     selectedInstance = await getrandom(Instances.neuters);
     newURL = `${scheme}${selectedInstance}${window.location.pathname}${
@@ -1025,13 +1002,11 @@ async function redirectReuters() {
 }
 
 async function redirectWikipedia() {
-  if (wikipedia[0]) {
+  if (wikipedia) {
     window.stop();
     let langCode = /^([a-z\-]+)\./.exec(window.location.hostname)[1];
 
-    selectedInstance = wikipedia[1]
-      ? `${farsideInstance}/wikiless`
-      : await getrandom(Instances.wikiless);
+    selectedInstance = await getrandom(Instances.wikiless);
 
     if (langCode === "www") langCode = "en";
     newURL = `${scheme}${selectedInstance}${window.location.pathname}?lang=${
@@ -1042,12 +1017,10 @@ async function redirectWikipedia() {
 }
 
 async function redirectImdb() {
-  if (imdb[0]) {
+  if (imdb) {
     window.stop();
 
-    selectedInstance = imdb[1]
-      ? `${farsideInstance}/libremdb`
-      : await getrandom(Instances.libremdb);
+    selectedInstance = await getrandom(Instances.libremdb);
 
     newURL = `${scheme}${selectedInstance}${window.location.pathname}${
       window.location.search
@@ -1058,12 +1031,10 @@ async function redirectImdb() {
 }
 
 async function redirectQuora() {
-  if (quora[0]) {
+  if (quora) {
     window.stop();
 
-    selectedInstance = quora[1]
-      ? `${farsideInstance}/quetre`
-      : await getrandom(Instances.quetre);
+    selectedInstance = await getrandom(Instances.quetre);
 
     newURL = `${scheme}${selectedInstance}${window.location.pathname}${
       window.location.search
@@ -1074,7 +1045,7 @@ async function redirectQuora() {
 }
 
 async function redirectFandom() {
-  if (fandom[0]) {
+  if (fandom) {
     window.stop();
     const fandomName = window.location.hostname.replace(/\..+/, "");
     selectedInstance = await getrandom(Instances.breezewiki);
@@ -1091,15 +1062,13 @@ async function redirectFandom() {
 
 async function redirectGoogle() {
   if (
-    google[0] &&
+    google &&
     window.location.hostname.startsWith("www") &&
     window.location.pathname.startsWith("/search")
   ) {
     window.stop();
 
-    selectedInstance = google[1]
-      ? `${farsideInstance}/${googleFrontend}`
-      : (selectedInstance = await getrandom(Instances[googleFrontend]));
+    selectedInstance = await getrandom(Instances[googleFrontend]);
 
     let pathname = window.location.pathname;
     if (googleFrontend === "librey" && pathname === "/search")
@@ -1113,7 +1082,7 @@ async function redirectGoogle() {
 }
 
 async function redirectGoodreads() {
-  if (goodreads[0]) {
+  if (goodreads) {
     window.stop();
 
     selectedInstance = await getrandom(Instances.biblioreads);
@@ -1131,14 +1100,12 @@ async function redirectGoodreads() {
 
 async function redirectStackoverflow() {
   if (
-    stackoverflow[0] &&
+    stackoverflow &&
     (window.location.pathname.startsWith("/questions/") ||
       window.location.pathname === "/")
   ) {
     window.stop();
-    selectedInstance = stackoverflow[1]
-      ? `${farsideInstance}/anonymousoverflow`
-      : await getrandom(Instances.anonymousoverflow);
+    selectedInstance = await getrandom(Instances.anonymousoverflow);
 
     newURL = `${scheme}${selectedInstance}${window.location.pathname}${
       window.location.search
@@ -1148,7 +1115,7 @@ async function redirectStackoverflow() {
 }
 
 async function redirectBandcamp() {
-  if (bandcamp[0]) {
+  if (bandcamp) {
     // thanks to libredirect
 
     selectedInstance = await getrandom(Instances.tent);
@@ -1191,7 +1158,7 @@ async function redirectBandcamp() {
 }
 
 async function redirectGenius() {
-  if (genius[0]) {
+  if (genius) {
     const pathname = window.location.pathname;
     selectedInstance = await getrandom(Instances[geniusFrontend]);
 
@@ -1217,7 +1184,7 @@ async function redirectGenius() {
 }
 
 async function redirectPinterest() {
-  if (pinterest[0]) {
+  if (pinterest) {
     selectedInstance = await getrandom(Instances.binternet);
 
     let searchpath = "";
@@ -1236,7 +1203,7 @@ async function redirectPinterest() {
 }
 
 async function redirectSoundcloud() {
-  if (soundcloud[0]) {
+  if (soundcloud) {
     window.stop();
     selectedInstance = await getrandom(Instances.tubo);
 
@@ -1249,7 +1216,7 @@ async function redirectSoundcloud() {
 }
 
 async function redirectPixiv() {
-  if (pixiv[0]) {
+  if (pixiv) {
     window.stop();
     selectedInstance = await getrandom(Instances.pixivfe);
 
@@ -1260,7 +1227,7 @@ async function redirectPixiv() {
 }
 
 async function redirectTwitch() {
-  if (twitch[0]) {
+  if (twitch) {
     window.stop();
     selectedInstance = await getrandom(Instances.safetwitch);
 
