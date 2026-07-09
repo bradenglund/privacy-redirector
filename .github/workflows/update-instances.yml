@@ -1,0 +1,50 @@
+name: Update Instances from LibRedirect
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Update instances from libredirect data.json
+        run: node tools/update-instances.js
+
+      - name: Check for changes
+        id: check
+        run: |
+          if git diff --quiet privacy-redirector.user.js; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request
+        if: steps.check.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Update instances from libredirect data"
+          title: "chore: update instances from libredirect data"
+          body: |
+            Automated instance update from [libredirect/instances](https://github.com/libredirect/instances).
+
+            The existing CI workflow will validate all instance URLs.
+          branch: update-instances
+          base: main
+          labels: automated
