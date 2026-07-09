@@ -1,44 +1,57 @@
 # 🔀 Privacy Redirector
 
-> [!CAUTION]
-> This project is no longer being maintained. I don't think it makes sense to continue developing this project as I am now using [Libredirect](https://libredirect.github.io/) myself. Thank you for all your support.
+[![test instances](https://github.com/bradenglund/privacy-redirector/actions/workflows/testInstances.yml/badge.svg)](https://github.com/bradenglund/privacy-redirector/actions/workflows/testInstances.yml)
+[![GitHub](https://img.shields.io/github/license/bradenglund/privacy-redirector?style=flat-square)](./LICENSE)
 
-[![Greasy Fork](https://img.shields.io/greasyfork/v/436359-privacy-redirector?style=flat-square)](https://greasyfork.org/scripts/436359-privacy-redirector)
-[![Greasy Fork](https://img.shields.io/greasyfork/dt/436359-privacy-redirector?style=flat-square)](https://greasyfork.org/scripts/436359-privacy-redirector)
-[![GitHub](https://img.shields.io/github/license/dybdeskarphet/privacy-redirector?style=flat-square)](./LICENSE)
-![test instances](https://github.com/dybdeskarphet/privacy-redirector/actions/workflows/testInstances.yml/badge.svg)
+A userscript that redirects social media platforms to privacy-respecting frontends
+(Nitter for Twitter, Invidious for YouTube, etc.). Works with any userscript manager
+(Tampermonkey, Violentmonkey, Greasemonkey) and with Safari content blockers like
+wBlock on iOS.
 
-## 📖 Description
-
-The Privacy Redirector userscript redirects popular social media platforms to privacy-respecting frontends, such as Nitter for Twitter and Piped for YouTube. This helps you enjoy the content while avoiding unnecessary tracking.
-
-Bu belgeyi Türkçe okumak için
-<a href="https://github.com/dybdeskarphet/privacy-redirector/blob/main/doc/README_tr.md">tıklayın</a>.
+A fork of [dybdeskarphet/privacy-redirector](https://github.com/dybdeskarphet/privacy-redirector)
+with auto-updated instances from [libredirect/instances](https://github.com/libredirect/instances).
 
 ## ⚙️ Installation
 
-### Greasyfork
-
-You can install the userscript directly from [Greasyfork](https://greasyfork.org/scripts/436359-privacy-redirector).
-
-### Manual Installation
-
-By [clicking this URL](https://raw.githubusercontent.com/dybdeskarphet/privacy-redirector/main/privacy-redirector.user.js), your userscript manager should detect the script automatically. If it doesn't:
-
-1. **Copy the Script**
-
-   Copy the contents of [privacy-redirector.user.js](https://raw.githubusercontent.com/dybdeskarphet/privacy-redirector/main/privacy-redirector.user.js).
-
-2. **Userscript Manager**
-
-   Add the copied script to your userscript manager. If you don't have a userscript manager, you can use one of the following:
+1. Install a userscript manager:
    - [Violentmonkey](https://violentmonkey.github.io/) (Edge, Chrome, Firefox)
    - [Tampermonkey](https://www.tampermonkey.net/) (Chrome, Firefox, Safari, Edge)
    - [Greasemonkey](https://www.greasespot.net/) (Firefox)
+   - [wBlock](https://apps.apple.com/app/wblock/id1631328159) (Safari on iOS)
+
+2. Click to install: [privacy-redirector.user.js](https://raw.githubusercontent.com/bradenglund/privacy-redirector/main/privacy-redirector.user.js)
 
 ## 🔍 Usage
 
-Once the userscript is installed, visit your favorite social media platforms, and you will be automatically redirected to the privacy-respecting frontend.
+Visit a supported platform and you'll be automatically redirected to a random
+working instance of the privacy-respecting frontend. Instances are sourced from the
+[libredirect project](https://github.com/libredirect/instances) and automatically
+updated via GitHub Actions.
+
+## ⚙️ Configuration
+
+Edit the values at the top of the script to enable/disable redirects per platform:
+
+```javascript
+let twitter = true;   // redirect is enabled
+let youtube = false;  // redirect is disabled
+```
+
+You can also change your preferred frontend for platforms that support multiple
+options:
+
+```javascript
+let youtubeFrontend = "invidious"; // "invidious", "piped", "tubo", "freetube"
+let redditFrontend = "libreddit";  // "libreddit", "teddit"
+```
+
+## 🔄 Automatic Instance Updates
+
+Every Monday, a GitHub Actions workflow fetches the latest instance list from
+[libredirect/instances](https://github.com/libredirect/instances) and opens a pull
+request with any changes. The existing CI workflow then validates all instance URLs
+are reachable. This means your redirects always use fresh, working instances without
+manual updates.
 
 ## 🔥 Supported Platforms
 
@@ -70,18 +83,15 @@ Once the userscript is installed, visit your favorite social media platforms, an
 - YouTube Music → [Piped](https://github.com/TeamPiped/Piped), [Invidious](https://github.com/iv-org/invidious), [Hyperpipe](https://codeberg.org/Hyperpipe/Hyperpipe)
 - YouTube → [Piped](https://github.com/TeamPiped/Piped), [Invidious](https://github.com/iv-org/invidious), [Tubo](https://github.com/migalmoreno/tubo)
 
-Feel free to contribute and add support for more platforms!
-
 ## ❓ FAQ
 
 - **How can I disable some redirections?**
 
-  You have to edit the values of the userscript. Change the `REDIRECTION` value to
-  `false` for the redirections you want. You can also disable [farside.link](https://github.com/benbusby/farside)
-  and add your custom instances. A little familiarity with JavaScript syntax should
+  Edit the values at the top of the script. Change the value to `false` for the
+  platforms you want to disable. A little familiarity with JavaScript syntax should
   be enough.
 
-- **Why scribe.rip doesn't redirect to user pages?**
+- **Why does scribe.rip not redirect to user pages?**
 
   "It's intentional that there is no way to browse content from a user, see popular
   posts, consume via an RSS feed, or further engage with an article via comments or
@@ -89,17 +99,18 @@ Feel free to contribute and add support for more platforms!
   not making a bad platform worthy."
   ~ [edwardloveall](https://sr.ht/~edwardloveall/Scribe/#project-goals)
 
-## ❤️ Contributing
+- **How often are instances updated?**
 
-Contributions are welcome! Feel free to open issues and pull requests to enhance the functionality or add support for additional platforms.
+  Instance lists are fetched from [libredirect/instances](https://github.com/libredirect/instances)
+  every Monday via GitHub Actions. If there are changes, a pull request is created
+  automatically, and the CI workflow validates all URLs are reachable.
 
 ## 🫂 Credits
 
-- [joshcangit](https://github.com/joshcangit)
-- [Farside.link](https://github.com/benbusby/farside)
-- [Libredirect](https://github.com/libredirect/browser_extension) for
-  Bandcamp redirection
+- [dybdeskarphet](https://github.com/dybdeskarphet) for the original Privacy Redirector
+- [Libredirect](https://github.com/libredirect/browser_extension) for instance data
+  and Bandcamp redirection logic
 
 ## 📜 License
 
-This project is licensed under the GPL-3.0 license - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the GPL-3.0 license — see the [LICENSE](LICENSE) file for details.
