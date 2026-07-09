@@ -161,6 +161,7 @@ let googleTranslateFrontend = "mozhi"; // accepts "lingva", "mozhi"
 let geniusFrontend = "intellectual"; // accepts dumb, intellectual
 let mediumFrontend = "scribe"; // accepts libmedium, scribe, mediumrip
 let hackernewsFrontend = "better"; // accepts better, worker
+let twitterFrontend = "xcancel.com"; // accepts any nitter instance hostname, or "random"
 
 // // // // // // // // // // // // //
 
@@ -717,7 +718,9 @@ async function redirectTwitter() {
     const pathname = window.location.pathname;
     let searchpath = `${pathname}${window.location.search}`;
 
-    selectedInstance = await getrandom(Instances.nitter);
+    selectedInstance = twitterFrontend === "random"
+      ? await getrandom(Instances.nitter)
+      : twitterFrontend;
 
     if (pathname === "/i/flow/login")
       searchpath = searchpath.replace(
