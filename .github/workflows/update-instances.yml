@@ -25,6 +25,10 @@ jobs:
       - name: Update instances from libredirect data.json
         run: node tools/update-instances.js
 
+      - name: Update version to current date
+        run: |
+          sed -i "s/\/\/ @version .*/\/\/ @version $(date +'%Y.%m.%d')/" privacy-redirector.user.js
+
       - name: Check for changes
         id: check
         run: |
