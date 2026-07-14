@@ -60,7 +60,7 @@
 // @namespace https://github.com/bradenglund/privacy-redirector
 // @author Ahmet Arda Kavakcı
 // @license GPLv3
-// @version 2026.07.13
+// @version 2026.07.14
 // @downloadURL
 // https://raw.githubusercontent.com/bradenglund/privacy-redirector/main/privacy-redirector.user.js
 // @supportURL https://github.com/bradenglund/privacy-redirector
@@ -325,6 +325,7 @@ const Instances = {
     "safereddit.com",
     "redlib.catsarch.com",
     "redlib.r4fo.com",
+    "redlib.ducks.party",
     "red.artemislena.eu",
     "redlib.privacyredirect.com",
     "redlib.nadeko.net",
@@ -550,6 +551,7 @@ const Instances = {
     "grep.vim.wtf",
     "kantan.cat",
     "ooglester.com",
+    "opnxng.com",
     "paulgo.io",
     "priv.au",
     "sear.lurx.net",
@@ -598,7 +600,6 @@ const Instances = {
     "searx.thefloatinglab.world",
     "searx.tiekoetter.com",
     "searx.tsmdt.de",
-    "searx.tuxcloud.net",
     "searxng.canine.tools",
     "searxng.cups.moe",
     "searxng.fishfvch.com",
