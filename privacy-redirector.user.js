@@ -60,7 +60,7 @@
 // @namespace https://github.com/bradenglund/privacy-redirector
 // @author Ahmet Arda Kavakcı
 // @license GPLv3
-// @version 2026.08.10
+// @version 2026.08.11
 // @downloadURL
 // https://raw.githubusercontent.com/bradenglund/privacy-redirector/main/privacy-redirector.user.js
 // @supportURL https://github.com/bradenglund/privacy-redirector
@@ -210,6 +210,7 @@ const Instances = {
     "ao.bunk.lol",
     "o.iii.st",
     "overflow.canine.tools",
+    "a.opnxng.com",
   ],
   hyperpipe: [
     "hyperpipe.surge.sh",
@@ -301,9 +302,9 @@ const Instances = {
     "intellectual.lumaeris.com",
   ],
   invidious: [
-    "inv.nadeko.net",
     "invidious.nerdvpn.de",
     "invidious.f5.si",
+    "inv.nadeko.net",
     "yt.chocolatemoo53.com",
     "invidious.tiekoetter.com",
     "inv-ygg.nadeko.net",
