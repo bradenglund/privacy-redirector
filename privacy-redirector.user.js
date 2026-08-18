@@ -60,7 +60,7 @@
 // @namespace https://github.com/bradenglund/privacy-redirector
 // @author Ahmet Arda Kavakcı
 // @license GPLv3
-// @version 2026.08.17
+// @version 2026.08.18
 // @downloadURL
 // https://raw.githubusercontent.com/bradenglund/privacy-redirector/main/privacy-redirector.user.js
 // @supportURL https://github.com/bradenglund/privacy-redirector
@@ -312,6 +312,7 @@ const Instances = {
   ],
   piped: [
     "adminforge.de",
+    "drgns.space",
     "piped.private.coffee",
   ],
   libmedium: [
