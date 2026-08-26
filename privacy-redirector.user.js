@@ -60,7 +60,7 @@
 // @namespace https://github.com/bradenglund/privacy-redirector
 // @author Ahmet Arda Kavakcı
 // @license GPLv3
-// @version 2026.08.25
+// @version 2026.08.26
 // @downloadURL
 // https://raw.githubusercontent.com/bradenglund/privacy-redirector/main/privacy-redirector.user.js
 // @supportURL https://github.com/bradenglund/privacy-redirector
@@ -388,8 +388,6 @@ const Instances = {
     "xcancel.com",
     "nitter.poast.org",
     "nitter.privacyredirect.com",
-    "lightbrd.com",
-    "nitter.space",
     "nitter.tiekoetter.com",
     "nuku.trabun.org",
     "nitter.catsarch.com",
