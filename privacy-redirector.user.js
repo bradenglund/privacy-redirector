@@ -60,7 +60,7 @@
 // @namespace https://github.com/bradenglund/privacy-redirector
 // @author Ahmet Arda Kavakcı
 // @license GPLv3
-// @version 2026.09.05
+// @version 2026.09.06
 // @downloadURL
 // https://raw.githubusercontent.com/bradenglund/privacy-redirector/main/privacy-redirector.user.js
 // @supportURL https://github.com/bradenglund/privacy-redirector
@@ -252,16 +252,13 @@ const Instances = {
     "biblioreads.franklyflawless.org",
   ],
   binternet: [
-    "binternet.revvy.de",
-    "binternet.darkness.services",
+    "curate.liv.town",
+    "binternet.nadeko.net",
     "bn.bloat.cat",
     "bn.opnxng.com",
     "binternet.ducks.party",
     "binternet.4o1x5.dev",
-    "binternet.privacyredirect.com",
-    "binternet.lunar.icu",
     "binternet.canine.tools",
-    "bn.kuuro.net",
     "binternet.privadency.com",
   ],
   breezewiki: [
