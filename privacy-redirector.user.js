@@ -60,7 +60,7 @@
 // @namespace https://github.com/bradenglund/privacy-redirector
 // @author Ahmet Arda Kavakcı
 // @license GPLv3
-// @version 2026.09.25
+// @version 2026.09.26
 // @downloadURL
 // https://raw.githubusercontent.com/bradenglund/privacy-redirector/main/privacy-redirector.user.js
 // @supportURL https://github.com/bradenglund/privacy-redirector
@@ -277,20 +277,12 @@ const Instances = {
     "breezewiki.private.coffee",
   ],
   dumb: [
-    "dm.vern.cc",
-    "sing.whatever.social",
-    "dumb.lunar.icu",
-    "dumb.privacydev.net",
-    "dumb.ducks.party",
-    "dumb.privacyfucking.rocks",
-    "dumb.hyperreal.coffee",
     "dumb.bloat.cat",
     "dumb.jeikobu.net",
     "dumb.canine.tools",
-    "lyr.dc09.ru",
-    "db.kuuro.net",
     "genius.fsky.io",
     "dumb.artemislena.eu",
+    "dumb.ducks.party",
   ],
   intellectual: [
     "intellectual.insprill.net",
@@ -322,7 +314,6 @@ const Instances = {
   libreddit: [
     "safereddit.com",
     "redlib.catsarch.com",
-    "redlib.ducks.party",
     "red.artemislena.eu",
     "redlib.cow.rip",
     "redlib.privacyredirect.com",
