@@ -60,7 +60,7 @@
 // @namespace https://github.com/bradenglund/privacy-redirector
 // @author Ahmet Arda Kavakcı
 // @license GPLv3
-// @version 2026.09.28
+// @version 2026.09.29
 // @downloadURL
 // https://raw.githubusercontent.com/bradenglund/privacy-redirector/main/privacy-redirector.user.js
 // @supportURL https://github.com/bradenglund/privacy-redirector
@@ -479,13 +479,9 @@ const Instances = {
     "tent.bloat.cat",
     "tent.canine.tools",
     "tent.deep-swarm.xyz",
-    "tent.lab8.cz",
-    "tent.nbh.ax",
     "tent.private.coffee",
     "tent.sny.sh",
-    "tn.dc09.ru",
     "tn.maid.zone",
-    "tn.vern.cc",
   ],
   tubo: [
     "tubo.media",
