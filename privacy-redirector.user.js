@@ -60,7 +60,7 @@
 // @namespace https://github.com/bradenglund/privacy-redirector
 // @author Ahmet Arda Kavakcı
 // @license GPLv3
-// @version 2026.10.02
+// @version 2026.10.03
 // @downloadURL
 // https://raw.githubusercontent.com/bradenglund/privacy-redirector/main/privacy-redirector.user.js
 // @supportURL https://github.com/bradenglund/privacy-redirector
@@ -449,7 +449,6 @@ const Instances = {
     "rimgo.aketawi.space",
     "imgur.nerdvpn.de",
     "rimgo.canine.tools",
-    "rimgo.astrial.org",
     "r.opnxng.com",
     "rg.kuuro.net",
     "rimgo.proxik.cloud",
