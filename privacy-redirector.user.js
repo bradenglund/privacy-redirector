@@ -60,7 +60,7 @@
 // @namespace https://github.com/bradenglund/privacy-redirector
 // @author Ahmet Arda Kavakcı
 // @license GPLv3
-// @version 2026.10.09
+// @version 2026.10.10
 // @downloadURL
 // https://raw.githubusercontent.com/bradenglund/privacy-redirector/main/privacy-redirector.user.js
 // @supportURL https://github.com/bradenglund/privacy-redirector
@@ -250,6 +250,7 @@ const Instances = {
     "br.bloat.cat",
     "biblioreads.canine.tools",
     "biblioreads.franklyflawless.org",
+    "biblioreads.utilibre.org",
   ],
   binternet: [
     "curate.liv.town",
@@ -313,6 +314,7 @@ const Instances = {
   libreddit: [
     "safereddit.com",
     "redlib.catsarch.com",
+    "redlib.nohost.network",
     "redlib.r4fo.com",
     "red.artemislena.eu",
     "redlib.cow.rip",
