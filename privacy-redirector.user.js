@@ -60,7 +60,7 @@
 // @namespace https://github.com/bradenglund/privacy-redirector
 // @author Ahmet Arda Kavakcı
 // @license GPLv3
-// @version 2026.10.25
+// @version 2026.10.26
 // @downloadURL
 // https://raw.githubusercontent.com/bradenglund/privacy-redirector/main/privacy-redirector.user.js
 // @supportURL https://github.com/bradenglund/privacy-redirector
@@ -294,8 +294,8 @@ const Instances = {
   ],
   invidious: [
     "inv.nadeko.net",
-    "yt.chocolatemoo53.com",
     "invidious.nerdvpn.de",
+    "yt.chocolatemoo53.com",
     "invidious.tiekoetter.com",
     "inv-ygg.nadeko.net",
     "inv.nadeko.ygg",
@@ -315,13 +315,11 @@ const Instances = {
   libreddit: [
     "safereddit.com",
     "redlib.catsarch.com",
-    "redlib.r4fo.com",
     "redlib.ducks.party",
     "red.artemislena.eu",
     "redlib.cow.rip",
-    "redlib.privacyredirect.com",
-    "redlib.nadeko.net",
     "redlib.reallyaweso.me",
+    "reddit.rtrace.io",
     "redlib.privadency.com",
   ],
   libremdb: [
