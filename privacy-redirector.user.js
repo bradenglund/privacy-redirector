@@ -60,7 +60,7 @@
 // @namespace https://github.com/bradenglund/privacy-redirector
 // @author Ahmet Arda Kavakcı
 // @license GPLv3
-// @version 2026.10.29
+// @version 2026.10.30
 // @downloadURL
 // https://raw.githubusercontent.com/bradenglund/privacy-redirector/main/privacy-redirector.user.js
 // @supportURL https://github.com/bradenglund/privacy-redirector
@@ -313,10 +313,6 @@ const Instances = {
     "libmedium.ducks.party",
   ],
   libreddit: [
-    "safereddit.com",
-    "redlib.catsarch.com",
-    "redlib.cow.rip",
-    "reddit.rtrace.io",
     "redlib.privadency.com",
   ],
   libremdb: [
