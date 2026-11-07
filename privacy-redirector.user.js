@@ -60,7 +60,7 @@
 // @namespace https://github.com/bradenglund/privacy-redirector
 // @author Ahmet Arda Kavakcı
 // @license GPLv3
-// @version 2026.11.06
+// @version 2026.11.07
 // @downloadURL
 // https://raw.githubusercontent.com/bradenglund/privacy-redirector/main/privacy-redirector.user.js
 // @supportURL https://github.com/bradenglund/privacy-redirector
@@ -597,6 +597,7 @@ const Instances = {
     "searxng.tr",
     "searxng.website",
     "searxng.wuemeli.com",
+    "shrt.win",
     "sx.catgirl.cloud",
     "sx.xo.st",
     "www.gruble.de",
