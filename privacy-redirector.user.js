@@ -60,7 +60,7 @@
 // @namespace https://github.com/bradenglund/privacy-redirector
 // @author Ahmet Arda Kavakcı
 // @license GPLv3
-// @version 2026.11.07
+// @version 2026.11.08
 // @downloadURL
 // https://raw.githubusercontent.com/bradenglund/privacy-redirector/main/privacy-redirector.user.js
 // @supportURL https://github.com/bradenglund/privacy-redirector
@@ -556,6 +556,7 @@ const Instances = {
     "search.mizuki.st",
     "search.pereira.is",
     "search.pi.vps.pw",
+    "search.privacyredirect.com",
     "search.rhscz.eu",
     "search.rowie.at",
     "search.serpensin.com",
@@ -603,7 +604,6 @@ const Instances = {
     "www.gruble.de",
     "www.isci.si",
     "xka.cz",
-    "privacyredirect.com",
     "auth.seddens.net",
   ],
   hackernews: {
