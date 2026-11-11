@@ -60,7 +60,7 @@
 // @namespace https://github.com/bradenglund/privacy-redirector
 // @author Ahmet Arda Kavakcı
 // @license GPLv3
-// @version 2026.11.10
+// @version 2026.11.11
 // @downloadURL
 // https://raw.githubusercontent.com/bradenglund/privacy-redirector/main/privacy-redirector.user.js
 // @supportURL https://github.com/bradenglund/privacy-redirector
@@ -560,7 +560,6 @@ const Instances = {
     "search.privacyredirect.com",
     "search.rhscz.eu",
     "search.rowie.at",
-    "search.seddens.net",
     "search.serpensin.com",
     "search.spiralab.org",
     "search.undertale.uk",
@@ -606,6 +605,7 @@ const Instances = {
     "www.gruble.de",
     "www.isci.si",
     "xka.cz",
+    "auth.seddens.net",
   ],
   hackernews: {
     better: "better-hackernews.vercel.app",
