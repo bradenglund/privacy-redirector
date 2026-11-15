@@ -60,7 +60,7 @@
 // @namespace https://github.com/bradenglund/privacy-redirector
 // @author Ahmet Arda Kavakcı
 // @license GPLv3
-// @version 2026.11.14
+// @version 2026.11.15
 // @downloadURL
 // https://raw.githubusercontent.com/bradenglund/privacy-redirector/main/privacy-redirector.user.js
 // @supportURL https://github.com/bradenglund/privacy-redirector
@@ -316,6 +316,10 @@ const Instances = {
     "redlib.freedit.eu",
     "redlib.cow.rip",
     "redlib.privadency.com",
+    "redlib.tiekoetter.com",
+    "redlib.utilibre.org",
+    "reddit.jeremyh.xyz",
+    "redlib.zanity.net",
   ],
   libremdb: [
     "libremdb.iket.me",
