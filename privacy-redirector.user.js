@@ -60,7 +60,7 @@
 // @namespace https://github.com/bradenglund/privacy-redirector
 // @author Ahmet Arda Kavakcı
 // @license GPLv3
-// @version 2026.11.23
+// @version 2026.11.24
 // @downloadURL
 // https://raw.githubusercontent.com/bradenglund/privacy-redirector/main/privacy-redirector.user.js
 // @supportURL https://github.com/bradenglund/privacy-redirector
@@ -534,7 +534,6 @@ const Instances = {
   searxng: [
     "anonsearch.win",
     "baresearch.org",
-    "etsi.me",
     "failsearx.culturanerd.it",
     "find.xenorio.xyz",
     "grep.vim.wtf",
@@ -551,6 +550,7 @@ const Instances = {
     "search.catboy.house",
     "search.chocolatemoo53.com",
     "search.ctq.ro",
+    "search.dnslister.com",
     "search.einfachzocken.eu",
     "search.ethibox.fr",
     "search.femboy.ad",
@@ -560,8 +560,6 @@ const Instances = {
     "search.jeremyh.xyz",
     "search.liuzj.net",
     "search.lumy.live",
-    "search.mdosch.de",
-    "search.mectov.my.id",
     "search.minus27315.dev",
     "search.mizuki.st",
     "search.pereira.is",
@@ -585,7 +583,6 @@ const Instances = {
     "searx.oloke.xyz",
     "searx.ononoki.org",
     "searx.party",
-    "searx.perennialte.ch",
     "searx.redgarden.cv",
     "searx.rhscz.eu",
     "searx.ro",
@@ -599,7 +596,6 @@ const Instances = {
     "searxng.deggo.fyi",
     "searxng.eshnetwork.space",
     "searxng.gdebest.net",
-    "searxng.gr",
     "searxng.jaydenha.uk",
     "searxng.moonshadow.dev",
     "searxng.paralaxitaentomology.org",
