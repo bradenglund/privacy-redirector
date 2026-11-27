@@ -60,7 +60,7 @@
 // @namespace https://github.com/bradenglund/privacy-redirector
 // @author Ahmet Arda Kavakcı
 // @license GPLv3
-// @version 2026.11.26
+// @version 2026.11.27
 // @downloadURL
 // https://raw.githubusercontent.com/bradenglund/privacy-redirector/main/privacy-redirector.user.js
 // @supportURL https://github.com/bradenglund/privacy-redirector
@@ -262,6 +262,7 @@ const Instances = {
     "binternet.canine.tools",
     "binternet.privadency.com",
     "binternet.utilibre.org",
+    "binternet.notbig.business",
   ],
   breezewiki: [
     "breezewiki.com",
@@ -479,6 +480,7 @@ const Instances = {
     "tent.bloat.cat",
     "tent.canine.tools",
     "tent.deep-swarm.xyz",
+    "tent.notbig.business",
     "tent.private.coffee",
     "tent.sny.sh",
     "tent.xnand.xyz",
@@ -572,7 +574,7 @@ const Instances = {
     "search.yuri.llc",
     "search.zina.dev",
     "searx.dresden.network",
-    "searx.githo.st",
+    "searx.idler.me",
     "searx.linxx.net",
     "searx.mbuf.net",
     "searx.mxchange.org",
