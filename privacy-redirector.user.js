@@ -60,7 +60,7 @@
 // @namespace https://github.com/bradenglund/privacy-redirector
 // @author Ahmet Arda Kavakcı
 // @license GPLv3
-// @version 2026.11.27
+// @version 2026.11.28
 // @downloadURL
 // https://raw.githubusercontent.com/bradenglund/privacy-redirector/main/privacy-redirector.user.js
 // @supportURL https://github.com/bradenglund/privacy-redirector
@@ -545,7 +545,6 @@ const Instances = {
     "sear.lurx.net",
     "search.anoni.net",
     "search.banke.cloud",
-    "search.bladerunn.in",
     "search.catboy.house",
     "search.chocolatemoo53.com",
     "search.ctq.ro",
@@ -555,6 +554,7 @@ const Instances = {
     "search.femboy.ad",
     "search.hbubli.cc",
     "search.im-in.space",
+    "search.incyberia.net",
     "search.inetol.net",
     "search.jeremyh.xyz",
     "search.liuzj.net",
